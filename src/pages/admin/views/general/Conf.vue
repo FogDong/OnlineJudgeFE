@@ -121,6 +121,7 @@
       })
       api.getWebsiteConfig().then(res => {
         this.websiteConfig = res.data.data
+        this.websiteConfig.website_name = 'CaiCloud Judge'
       }).catch(() => {
       })
     },

@@ -111,9 +111,7 @@
           mode[lang.name] = lang.content_type
         })
         this.mode = mode
-        console.log(this.mode.Python2)
         this.mode.javascript = 'javascript'
-        console.log(mode, this.mode)
         this.editor.setOption('mode', this.mode[this.language])
       })
       this.editor.focus()
@@ -123,7 +121,6 @@
         this.$emit('update:value', newCode)
       },
       onLangChange (newVal) {
-        console.log(this.mode)
         this.editor.setOption('mode', this.mode[newVal])
         this.$emit('changeLang', newVal)
       },

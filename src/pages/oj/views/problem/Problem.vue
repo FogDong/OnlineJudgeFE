@@ -286,6 +286,7 @@
           })
           problem.languages = problem.languages.sort()
           this.problem = problem
+          this.problem.source = 'CaiCloud Judge http://caicloud.io'
           this.changePie(problem)
 
           // 在beforeRouteEnter中修改了, 说明本地有code，无需加载template
