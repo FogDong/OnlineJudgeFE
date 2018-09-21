@@ -31,11 +31,13 @@ import hljs from 'highlight.js/lib/highlight'
 import cpp from 'highlight.js/lib/languages/cpp'
 import python from 'highlight.js/lib/languages/python'
 import java from 'highlight.js/lib/languages/java'
+import javascript from 'highlight.js/lib/languages/javascript'
 import 'highlight.js/styles/atom-one-light.css'
 
 hljs.registerLanguage('cpp', cpp)
 hljs.registerLanguage('java', java)
 hljs.registerLanguage('python', python)
+hljs.registerLanguage('javascript', javascript)
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {
