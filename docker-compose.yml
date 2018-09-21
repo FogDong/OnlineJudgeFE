@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  node:
+    image: node:6-jessie
+    ports:
+      - "5000:8080"
+    volumes:
+      - .:/home/node
+    working_dir: /home/node
+    command: /bin/bash ./run.sh
+    environment:
+      NODE_ENV: development
+      TARGET: http://10.30.1.3:8989
