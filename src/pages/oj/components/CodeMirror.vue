@@ -41,6 +41,7 @@
   // mode
   import 'codemirror/mode/clike/clike.js'
   import 'codemirror/mode/python/python.js'
+  import 'codemirror/mode/javascript/javascript.js'
 
   // active-line.js
   import 'codemirror/addon/selection/active-line.js'
@@ -64,12 +65,12 @@
       languages: {
         type: Array,
         default: () => {
-          return ['C', 'C++', 'Java', 'Python2']
+          return ['C', 'C++', 'Java', 'Python2', 'Python3', 'javascript']
         }
       },
       language: {
         type: String,
-        default: 'C++'
+        default: '++'
       },
       theme: {
         type: String,
@@ -110,6 +111,9 @@
           mode[lang.name] = lang.content_type
         })
         this.mode = mode
+        console.log(this.mode.Python2)
+        this.mode.javascript = 'javascript'
+        console.log(mode, this.mode)
         this.editor.setOption('mode', this.mode[this.language])
       })
       this.editor.focus()
@@ -119,6 +123,7 @@
         this.$emit('update:value', newCode)
       },
       onLangChange (newVal) {
+        console.log(this.mode)
         this.editor.setOption('mode', this.mode[newVal])
         this.$emit('changeLang', newVal)
       },
