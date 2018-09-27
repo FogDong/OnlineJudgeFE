@@ -1,20 +1,20 @@
 <template>
   <div id="header">
     <Menu theme="light" mode="horizontal" @on-select="handleRoute" :active-name="activeMenu" class="oj-menu">
-      <div class="logo"><span>{{website.website_name}}</span></div>
+      <div class="logo"><img src="../../../assets/caicloud-logo.png" class="cai-logo" alt="oj admin"/></div>
       <Menu-item name="/">
         <Icon type="home"></Icon>
         {{$t('m.Home')}}
       </Menu-item>
-      <Menu-item name="/problems">
+      <!-- <Menu-item name="/problems">
         <Icon type="ios-keypad"></Icon>
         {{$t('m.NavProblems')}}
-      </Menu-item>
+      </Menu-item> -->
       <Menu-item name="/contests">
         <Icon type="trophy"></Icon>
         {{$t('m.Contests')}}
       </Menu-item>
-      <Menu-item name="/status">
+      <!-- <Menu-item name="/status">
         <Icon type="ios-pulse-strong"></Icon>
         {{$t('m.NavStatus')}}
       </Menu-item>
@@ -29,7 +29,7 @@
         <Menu-item name="/oi-rank">
           {{$t('m.OI_Rank')}}
         </Menu-item>
-      </Submenu>
+      </Submenu> -->
       <Submenu name="about">
         <template slot="title">
           <Icon type="information-circled"></Icon>
@@ -165,7 +165,10 @@
       margin-right: 10px;
     }
   }
-
+  .cai-logo {
+    height: 55px;
+    width: 175px;
+  }
   .modal {
     &-title {
       font-size: 18px;

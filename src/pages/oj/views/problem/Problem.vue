@@ -14,7 +14,7 @@
           <p class="title">{{$t('m.Output')}}</p>
           <p class="content" v-html=problem.output_description></p>
 
-          <div v-for="(sample, index) of problem.samples" :key="index">
+          <div v-show="problem.samples[0].input === ' '? false: true" v-for="(sample, index) of problem.samples" :key="index">
             <div class="flex-container sample">
               <div class="sample-input">
                 <p class="title">{{$t('m.Sample_Input')}} {{index + 1}}
@@ -251,7 +251,8 @@
         largePieInitOpts: {
           width: '500',
           height: '480'
-        }
+        },
+        sampleShow: true
       }
     },
     beforeRouteEnter (to, from, next) {
@@ -287,6 +288,7 @@
           problem.languages = problem.languages.sort()
           this.problem = problem
           this.problem.source = 'CaiCloud Judge http://caicloud.io'
+          console.log(this.problem)
           this.changePie(problem)
 
           // 在beforeRouteEnter中修改了, 说明本地有code，无需加载template

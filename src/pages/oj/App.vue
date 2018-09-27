@@ -7,8 +7,8 @@
       </transition>
       <div class="footer">
         <p v-html="website.website_footer"></p>
-        <p>Powered by <a href="https://caicloud.io/">CaiCloud</a>
-          <span v-if="version">&nbsp; Version: {{ version }}</span>
+        <p>Powered by <a href="https://caicloud.io/">Caicloud</a>
+          <!-- <span v-if="version">&nbsp; Version: {{ version }}</span> -->
         </p>
       </div>
     </div>

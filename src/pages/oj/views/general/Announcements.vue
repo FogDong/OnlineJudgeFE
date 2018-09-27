@@ -32,7 +32,7 @@
       </template>
 
       <template v-else>
-        <div v-katex v-html="announcement.content" key="content" class="content-container markdown-body"></div>
+        <div v-katex v-html="announcements[0].content" key="content" class="content-container markdown-body"></div>
       </template>
     </transition-group>
   </Panel>
@@ -54,11 +54,12 @@
         btnLoading: false,
         announcements: [],
         announcement: '',
-        listVisible: true
+        listVisible: false
       }
     },
     mounted () {
       this.init()
+      console.log(this.announcements, this.announcement)
     },
     methods: {
       init () {
@@ -67,6 +68,7 @@
         } else {
           this.getAnnouncementList()
         }
+        // this.goAnnouncement(this.announcements[0])
       },
       getAnnouncementList (page = 1) {
         let params = {
